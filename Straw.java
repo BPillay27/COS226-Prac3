@@ -13,12 +13,13 @@ public class Straw {
 	public void sip(int threadId) {
 		// done
 		try {
+			System.out.println("Boba " + threadId + " waiting patiently to be sipped");
 			lock.lock(threadId);
-			// possible output here
+			System.out.println("Boba " + threadId + " is being sipped up the straw");
 			long x = (long) (Math.random() * 100);
 			Thread.sleep(x);
 
-			// possible output here
+			System.out.println("Boba " + threadId + " is being consumed");
 		} catch (InterruptedException e) {
 			Thread.currentThread().interrupt();
 		} finally {
